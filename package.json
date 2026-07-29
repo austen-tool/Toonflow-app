@@ -14,9 +14,10 @@
     "email": "ltlctools@outlook.com"
   },
   "main": "build/main.js",
-  "packageManager": "yarn@1.0.0",
+  "packageManager": "yarn@1.22.22",
   "engines": {
-    "node": ">=1.0.0"
+    "node": "24.18.0",
+    "yarn": "1.22.22"
   },
   "scripts": {
     "dev": "nodemon --inspect --exec tsx src/app.ts",
@@ -28,6 +29,7 @@
     "pack": "electron-builder --dir",
     "dist": "yarn build && electron-builder",
     "dist:win": "yarn build && electron-builder --win",
+    "dist:win:unsigned": "yarn build && electron-builder --win --publish never --config.win.signAndEditExecutable=false",
     "dist:mac": "yarn build && electron-builder --mac",
     "dist:linux": "yarn build && electron-builder --linux",
     "debug:ai": "npx @ai-sdk/devtools",
